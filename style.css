@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
 .”input-row” {
     margin-bottom: 10px;
 }
 
 body {
+    font-family: Inter, sans-serif;
     min-height: 100vh;
     margin: 0;
     display: flex;
@@ -10,18 +17,197 @@ body {
     justify-content: center;
 }
 
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    border: 1px solid #C9CCD6;
+    border-radius: 4px;
+    width: 224px;
+    height: 28px;
+    padding: 6px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border: 1px solid #3574F0;
+    outline: none;
+}
+
+input[type="number"] {
+    width: 30px;
+    height: 10px;
+}
+
+input[type="number"]:focus {
+    border: 1px solid #3574F0;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+    color: #818594;
+}
+
+input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+input[type="radio"] + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    color: #000;
+    margin-right: 20px;
+    display: inline-block;
+}
+
+input[type="radio"] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 1px solid #A8ADBD;
+    border-radius: 50%;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+input[type="radio"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3574F0;
+}
+
+input[type="radio"] + label:hover::before {
+    border-color: #3574F0;
+}
+
+select#group {
+    width: 90px;
+    height: 38px;
+    padding: 0 12px;
+    border: .5px solid #C9CCD6;
+    border-radius: 8px;
+    font-size: 13px;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23666" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px 16px;
+}
+
+.”input-row” input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #A8ADBD;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.”input-row” input[type="checkbox"]:checked::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 1px;
+    width: 5px;
+    height: 9px;
+    border: solid #3574F0;
+    border-width: 0 1px 1px 0;
+    transform: rotate(45deg);
+}
+
+
+select#group:focus {
+    border-color: #3574F0;
+}
+
+
+textarea {
+    height: 60px;
+}
+
 .content {
     display: flex;
     gap: 100px;
     margin: 0 auto;
+    border: .5px solid #C9CCD6;
+    box-shadow: 0px 6px 20px rgba(145, 145, 145, 0.47);
+    border-radius: 8px;
+    padding-right: 20px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
-.info__content-wrapper {
-    border: 1px solid #000;
-    min-width: 300px;
-    padding: 10px;
+.”input-row”:nth-child(4) {
+    padding-block: 10px;
+}
+
+button[type="submit"] {
+    background-color: #3574F0;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 6px 20px rgba(145, 145, 145, 0.2);
+}
+
+button[type="submit"]:hover {
+    background-color: #2d63cc;
+}
+
+button[type="submit"]:active {
+    background-color: #244fa3;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 #myForm {
-    padding-top: 20px;
+    padding: 20px;
+    background-color: #F7F8FA;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: 1px solid #EBECF0;
+}
+
+.info__content-wrapper {
+    border: 1px solid #C9CCD6;;
+    min-width: 300px;
+    padding: 10px;
+    border-radius: 4px;
 }
